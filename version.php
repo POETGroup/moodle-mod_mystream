@@ -15,11 +15,12 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Mystream block definition
+ * Mystream mod definition
  *
  * @package    contrib
  * @subpackage mod_mystream
- * @copyright  2016 Mike Churchward - The POET Group
+ * @author     Mike Churchward <mike.churchward@poetgroup.org>
+ * @copyright  2016 The POET Group
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

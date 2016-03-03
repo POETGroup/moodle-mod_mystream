@@ -15,10 +15,33 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Mystream block definition
+ * Mystream mod definition
  *
  * @package    contrib
  * @subpackage mod_mystream
- * @copyright  2016 Mike Churchward - The POET Group
+ * @author     Mike Churchward <mike.churchward@poetgroup.org>
+ * @copyright  2016 The POET Group
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+defined('MOODLE_INTERNAL') || die();
+
+/**
+ * Adds a Mystream instance.
+ *
+ * @param stdClass $data Form data
+ * @param mod_assign_mod_form  $form The form
+ * @return int The instance id of the new assignment
+ */
+function webexactivity_add_instance($data, $mform) {
+}
+
+/**
+ * Updates a Mystream instance.
+ *
+ * @param stdClass $data Form data
+ * @param mod_assign_mod_form  $form The form
+ * @return bool If the update passed (true) or failed
+ */
+function webexactivity_update_instance($data, $mform) {
+}

@@ -25,4 +25,4 @@
  */
 
 $string['pluginname'] = '';
-$string['mystrean:addinstance'] = '';
+$string['mystream:addinstance'] = '';

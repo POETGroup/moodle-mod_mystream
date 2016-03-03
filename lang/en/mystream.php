@@ -24,5 +24,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = '';
-$string['mystream:addinstance'] = '';
+$string['pluginname'] = 'My stream activity';
+$string['modulename'] = 'My stream activity';
+$string['modulenameplural'] = 'My stream activities';
+$string['mystream:addinstance'] = 'Add My stream activity';
+$string['pluginadministration'] = 'Mystream administration';

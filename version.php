@@ -25,4 +25,7 @@
  */
 
 $plugin->version = 2016030100;
+$plugin->release = 'POET Alpha 0';
 $plugin->component = 'mod_mystream';
+$plugin->requires = 2015111600;
+$plugin->maturity = 'MATURITY_ALPHA';

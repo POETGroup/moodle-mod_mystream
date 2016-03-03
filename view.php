@@ -23,3 +23,47 @@
  * @copyright  2016 The POET Group
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+require_once(dirname(__FILE__) . '/../../config.php');
+
+$id = optional_param('id', 0, PARAM_INT); // Course Module ID, or
+$m = optional_param('m', 0, PARAM_INT);   // Mystream ID
+
+if ($id) {
+    $PAGE->set_url('/mod/mystream/view.php', array('id' => $id));
+    if (! $cm = get_coursemodule_from_id('mystream', $id)) {
+        print_error('invalidcoursemodule');
+    }
+
+    if (! $course = $DB->get_record('course', array('id' => $cm->course))) {
+        print_error('coursemisconf');
+    }
+
+    if (! $mystream = $DB->get_record('mystream', array('id' => $cm->instance))) {
+        print_error('invalidcoursemodule');
+    }
+
+} else {
+    $PAGE->set_url('/mod/label/view.php', array('m' => $m));
+    if (! $mystream = $DB->get_record('mystream', array('id' => $m))) {
+        print_error('invalidcoursemodule');
+    }
+    if (! $course = $DB->get_record('course', array('id' => $mystream->course)) ){
+        print_error('coursemisconf');
+    }
+    if (! $cm = get_coursemodule_from_instance('mystream', $mystream->id, $course->id)) {
+        print_error('invalidcoursemodule');
+    }
+}
+
+require_login($course, true, $cm);
+
+// The rest should be the activity-specific display code.
+$PAGE->set_title($mystream->name);
+$PAGE->set_heading($course->fullname);
+echo $OUTPUT->header();
+echo $OUTPUT->heading(format_string($mystream->name), 2, null);
+if ($mystream->intro) {
+    echo $OUTPUT->box(format_module_intro('mystream', $mystream, $cm->id), 'generalbox', 'intro');
+}
+echo $OUTPUT->footer();

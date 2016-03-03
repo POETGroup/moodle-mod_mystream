@@ -33,7 +33,14 @@ defined('MOODLE_INTERNAL') || die();
  * @param mod_assign_mod_form  $form The form
  * @return int The instance id of the new assignment
  */
-function mystream_add_instance($data, $mform) {
+function mystream_add_instance($mystream, $mform) {
+    global $DB;
+
+    $mystream->timemodified = time();
+
+    $mystream->id = $DB->insert_record('mystream', $mystream);
+
+    return $mystream->id;
 }
 
 /**
@@ -43,5 +50,23 @@ function mystream_add_instance($data, $mform) {
  * @param mod_assign_mod_form  $form The form
  * @return bool If the update passed (true) or failed
  */
-function mystream_update_instance($data, $mform) {
+function mystream_update_instance($mystream, $mform) {
+    global $DB;
+
+    $mystream->timemodified = time();
+    $mystream->id = $mystream->instance;
+
+    return $DB->update_record('mystream', $mystream);
+}
+
+/**
+ * Deletes a Mystream instance.
+ *
+ * @param int   $id   Record id to delete.
+ * @return bool       If the update passed (true) or failed
+ */
+function mystream_delete_instance($id) {
+    global $DB;
+
+    return $DB->delete_records('mystream', array('id' => $id));
 }

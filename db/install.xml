@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
   <XMLDB PATH="mod/mystream/db" VERSION="20160302" COMMENT="XMLDB file for Moodle mod/mystream">
     <TABLES>
-      <TABLE NAME="mod_mystream" COMMENT="Default comment for mod_mystream, please edit me">
+      <TABLE NAME="mystream" COMMENT="Default comment for mod_mystream, please edit me">
         <FIELDS>
           <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
         </FIELDS>

@@ -33,7 +33,7 @@ defined('MOODLE_INTERNAL') || die();
  * @param mod_assign_mod_form  $form The form
  * @return int The instance id of the new assignment
  */
-function webexactivity_add_instance($data, $mform) {
+function mystream_add_instance($data, $mform) {
 }
 
 /**
@@ -43,5 +43,5 @@ function webexactivity_add_instance($data, $mform) {
  * @param mod_assign_mod_form  $form The form
  * @return bool If the update passed (true) or failed
  */
-function webexactivity_update_instance($data, $mform) {
+function mystream_update_instance($data, $mform) {
 }

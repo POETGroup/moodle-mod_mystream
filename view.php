@@ -27,7 +27,7 @@
 require_once(dirname(__FILE__) . '/../../config.php');
 
 $id = optional_param('id', 0, PARAM_INT); // Course Module ID, or
-$m = optional_param('m', 0, PARAM_INT);   // Mystream ID
+$m = optional_param('m', 0, PARAM_INT);   // Mystream ID.
 
 if ($id) {
     $PAGE->set_url('/mod/mystream/view.php', array('id' => $id));

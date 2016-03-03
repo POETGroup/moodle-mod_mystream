@@ -35,7 +35,7 @@ unset($id);
 require_course_login($course, true);
 $PAGE->set_pagelayout('incourse');
 
-// Get all required strings
+// Get all required strings.
 $strmystreams = get_string('modulenameplural', 'mod_mystream');
 $strmystream  = get_string('modulename', 'mod_mystream');
 $strname = get_string('name');
@@ -48,7 +48,7 @@ $PAGE->set_heading($course->fullname);
 $PAGE->navbar->add($strmystreams);
 echo $OUTPUT->header();
 
-// Get all the appropriate data
+// Get all the appropriate data.
 if (!$mystreams = get_all_instances_in_course('mystream', $course)) {
     notice(get_string('thereareno', 'moodle', $strmystreams), "$CFG->wwwroot/course/view.php?id=$course->id");
     die;
@@ -87,7 +87,7 @@ foreach ($mystreams as $mystream) {
         $printsection = html_writer::tag('span', userdate($mystream->timemodified), array('class' => 'smallinfo'));
     }
 
-    $class = $mystream->visible ? null : array('class' => 'dimmed'); // hidden modules are dimmed
+    $class = $mystream->visible ? null : array('class' => 'dimmed'); // Hidden modules are dimmed.
 
     $table->data[] = array (
         $printsection,

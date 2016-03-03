@@ -56,7 +56,15 @@ if ($id) {
     }
 }
 
-require_login($course, true, $cm);
+require_course_login($course, true, $cm);
+$context = context_module::instance($cm->id);
+
+$params = array(
+    'objectid' => $mystream->id,
+    'context' => $context
+);
+$event = \mod_mystream\event\course_module_viewed::create($params);
+$event->trigger();
 
 // The rest should be the activity-specific display code.
 $PAGE->set_title($mystream->name);

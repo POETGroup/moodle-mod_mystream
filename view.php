@@ -48,7 +48,7 @@ if ($id) {
     if (! $mystream = $DB->get_record('mystream', array('id' => $m))) {
         print_error('invalidcoursemodule');
     }
-    if (! $course = $DB->get_record('course', array('id' => $mystream->course)) ){
+    if (! $course = $DB->get_record('course', array('id' => $mystream->course))) {
         print_error('coursemisconf');
     }
     if (! $cm = get_coursemodule_from_instance('mystream', $mystream->id, $course->id)) {
